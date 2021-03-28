@@ -47,18 +47,18 @@ export default class ListaPessoas extends Component {
                 <h2>PESSOAS CADASTRADAS</h2>  
                 <div className="container">
                     <Table dataSource={this.state.pessoas}>
-                        <Column title="NOME" dataIndex="nome" key="nome" />
+                        <Column title="NOME" dataIndex="nome" key="nome" width="400px" />
                         <Column title="CPF" dataIndex="cpf" key="cpf" />
                         <Column title="TELEFONE" dataIndex="telefone" key="telefone" />
                         <Column title="EMAIL" dataIndex="email" key="email" />
                         <Column title="VACINADA" dataIndex="isVacinada" key="isVacinada" 
                         render={(text, record) => (<p>{String(record.isVacinada)}</p>)}/>
 
-                        <Column title="ATUALIZAR"  key="atualizar"
+                        <Column title="ATUALIZAR"  key="atualizar" width="20px"
                         render={(text, record) => (<Button onClick={() => this.sucess(record)} 
                         type="primary">Alterar status</Button>)} />
 
-                        <Column title="DELETAR"  key="deletar"
+                        <Column title="DELETAR"  key="deletar" width="20px"
                         render={(text, record) => (<Button onClick={() => this.delete(record)} 
                         type="primary" danger>Deletar</Button>)} />                      
 
@@ -68,5 +68,7 @@ export default class ListaPessoas extends Component {
         )
 
 }
+
+
 
 }
