@@ -22,6 +22,11 @@ export default class ListaPessoas extends Component {
         message.success('Status alterado com sucesso!');
     }
 
+    delete = (record) => {
+        PessoaDataService.deletePessoa(record.codigo);
+        message.success('Deletado com sucesso!');
+    }
+
     componentDidMount(){
         this.refreshPessoas();
     }
@@ -48,10 +53,14 @@ export default class ListaPessoas extends Component {
                         <Column title="EMAIL" dataIndex="email" key="email" />
                         <Column title="VACINADA" dataIndex="isVacinada" key="isVacinada" 
                         render={(text, record) => (<p>{String(record.isVacinada)}</p>)}/>
+
                         <Column title="ATUALIZAR"  key="atualizar"
                         render={(text, record) => (<Button onClick={() => this.sucess(record)} 
-                        type="primary">Alterar status</Button>)} 
-                        />
+                        type="primary">Alterar status</Button>)} />
+
+                        <Column title="DELETAR"  key="deletar"
+                        render={(text, record) => (<Button onClick={() => this.delete(record)} 
+                        type="primary" danger>Deletar</Button>)} />                      
 
                     </Table>
                 </div>
