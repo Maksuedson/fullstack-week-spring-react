@@ -11,6 +11,10 @@ class PessoaDataService{
     updatePessoa(pessoa, codigo){
         return axios.put(`${API_URL}pessoas/${codigo}`, pessoa);
     }
+	
+    deletePessoa(codigo){
+        return axios.delete(`${API_URL}pessoas/${codigo}`);
+    }			
 }
 
 export default new PessoaDataService();
