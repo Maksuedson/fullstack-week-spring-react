@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://week-back-end-spring-vacine.herokuapp.com/';
+const API_URL = process.env.REACT_APP_API_URL;
 
 class PessoaDataService{
     
